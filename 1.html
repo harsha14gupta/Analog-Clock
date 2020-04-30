@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Project : Clock </title>
+	<link rel="stylesheet" href="1.css">
+</head>
+<body>
+	<div id="container">
+	<h1>ANALOG CLOCK USING HTML,CSS AND JAVASCRIPT </h1> 
+    </div>
+	<div class="clock">
+		<div class="hours">
+			<div class= "hr" id="hr"></div>
+		</div>
+		<div class="minutes">
+			<div class="mn" id="mn"></div>
+		</div>
+		<div class="seconds">
+			<div class="sc" id="sc"></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	const deg=6;
+	const hr= document.querySelector("#hr");
+	const mn= document.querySelector("#mn");
+	const sc= document.querySelector("#sc");
+  
+  setInterval(() => 
+
+  {
+ 
+    let now = new Date();
+
+    let hours=now.getHours()*30;
+    let minutes=now.getMinutes()*deg;
+    let seconds=now.getSeconds()*deg;
+
+    hr.style.transform = `rotateZ(${(hours)+(minutes/12)}deg)`;               
+    mn.style.transform = `rotateZ(${minutes}deg)`;  
+    sc.style.transform = `rotateZ(${seconds}deg)`;
+
+   })            
+    
+</script>
+
+</html> 
